@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>	&#128425; &#128425; &#128425; คำนวนดอกเบี้ยรายปี ดอกทบต้น &#128425; &#128425; &#128425;</title>
+    <style>
+        body {
+            background-image: url("company_sign_tranparency.png");
+            background-repeat: no-repeat;
+            background-position: right top;
+            }
+    </style>
+    <body style="background-color: #EBFFFB">
+    
+</head>
+    
+<body>
+    <h1>&#128425; &#128425; &#128425; คำนวนดอกเบี้ยรายปี ดอกทบต้น &#128425; &#128425; &#128425;</h1>
+     <br>
+    
+     <form class action="calculationpage2.html" method="post">
+        <label> ใส่เงินเก็บต่อเดือน </label>         
+        <input type="number" name="inputmoney" id="inputmoney" placeholder="number" >
+       
+    </form>      
+    
+    <form class action="calculationpage2.html" method="post">
+            <label> ใส่ดอกเบี้ยต่อปี (%) </label>
+            <input type="number" name="inputinterest" id="inputinterest" placeholder="number" >
+    
+    </form>      
+            
+    <form class action="calculationpage2.html" method="post">
+            <label>ใส่จำนวนปีที่ต้องการ </label>
+            <input type="number" name="inputyears" id="inputyears" placeholder="number" >
+    
+    </form>  
+    
+         <input type="submit" value="result" onclick="myFunction()">  
+        
+<!--    <a href="calculationpage2.html">ดูผลการคำนวณ</a>-->
+    
+<!--
+    ใส่เงินเก็บต่อเดือน  
+
+    <input type="text" name="inputmoney" id="inputmoney" placeholder="number" >
+    <input type="submit" > 
+    <br>
+    
+    ใส่ดอกเบี้ยต่อปี (%) 
+    <input type="text" name="inputinterest" id="inputinterest" placeholder="number" >
+    <input type="submit"> 
+    <br>    
+    
+    
+    
+    ใส่จำนวนปีที่ต้องการ 
+    <input type="text" name="inputyears" id="inputyears" placeholder="number" >
+    <input type="submit" onclick="myFunction()">
+    <br>
+-->
+
+    
+<script>
+    
+    function myFunction() {
+        var money =  document.getElementById("inputmoney").value ;
+        var money_year = money * 12 ;
+        var interest = document.getElementById("inputinterest").value ;
+        var years = document.getElementById("inputyears").value ;
+        var yourMoney = money_year * years;
+        
+         document.write("เงินเก็บต่อเดือน = " + money + "<br>" + "<br>");
+         document.write("ดอกเบี้ยต่อปี = " + interest + "<br>" + "<br>");
+         document.write("จำนวนปีที่ต้องการ = " + years + "<br>" + "<br>");
+         document.write("จำนวนเงินต้นที่ลงทุน = " + yourMoney + "<br>" + "<br>");
+        
+        
+        var sum_year = money_year  * (1 + (interest/100));
+
+            for( var i = 1; i <= years; i++){
+                document.writeln("ปีที่ " + (i) + " เงินต้นรวมดอก = " + sum_year + "<br>" + "<br>");
+                sum_year = sum_year + money_year;
+                sum_year = sum_year  * (1 + (interest/100));
+                }
+        document.write("ดอกเบี้ยที่งอกเงยจากเงินต้น = " + (sum_year - yourMoney) + "<br>" + "<br>");
+        
+    }
+
+    </script>
+
+</body>
+</html>
+
+
+
+
